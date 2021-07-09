@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>scrapy log | Hexo</title>
+  <title>learn-JavaScript | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Scrapy 步骤 新建项目1234scrapy startproject doubancd douban&#x2F;spiderscrapy genspider douban_spider movie.doubam.com  123456789101112# settings.pyROBOTSTXT_OBEY &#x3D; False   # rboot 协议CONCURRENT_REQUESTS &#x3D; 32 # 并">
+  <meta name="description" content="JS 有哪些数据类型12345console.dir(object)console.log(window.location)console.dir(window.location)console.table([a,b,c])console.log(&#96;%c $&amp;#123;a&amp;#125; is a number&#96;, &amp;#x27;backgroud-color:green&amp;#x27;)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scrapy log">
-<meta property="og:url" content="http://example.com/2021/07/06/scrapy-log/index.html">
+<meta property="og:title" content="learn-JavaScript">
+<meta property="og:url" content="http://example.com/2021/07/07/learn-JavaScript/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Scrapy 步骤 新建项目1234scrapy startproject doubancd douban&#x2F;spiderscrapy genspider douban_spider movie.doubam.com  123456789101112# settings.pyROBOTSTXT_OBEY &#x3D; False   # rboot 协议CONCURRENT_REQUESTS &#x3D; 32 # 并">
+<meta property="og:description" content="JS 有哪些数据类型12345console.dir(object)console.log(window.location)console.dir(window.location)console.table([a,b,c])console.log(&#96;%c $&amp;#123;a&amp;#125; is a number&#96;, &amp;#x27;backgroud-color:green&amp;#x27;)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-07-06T05:44:59.000Z">
-<meta property="article:modified_time" content="2021-07-06T10:03:31.715Z">
+<meta property="article:published_time" content="2021-07-07T07:22:55.000Z">
+<meta property="article:modified_time" content="2021-07-07T07:40:10.303Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,75 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-scrapy-log" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="diary-learn-JavaScript" class="article article-type-diary " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      scrapy log
+      learn-JavaScript
     </h1>
   
 
         
-        <a href="/2021/07/06/scrapy-log/" class="archive-article-date">
-  	<time datetime="2021-07-06T05:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-06</time>
+        <a href="/2021/07/07/learn-JavaScript/" class="archive-article-date">
+  	<time datetime="2021-07-07T07:22:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Scrapy-步骤"><a href="#Scrapy-步骤" class="headerlink" title="Scrapy 步骤"></a>Scrapy 步骤</h3><ul>
-<li>新建项目<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject douban</span><br><span class="line"></span><br><span class="line">cd douban/spider</span><br><span class="line">scrapy genspider douban_spider movie.doubam.com</span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settings.py</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span>   <span class="comment"># rboot 协议</span></span><br><span class="line">CONCURRENT_REQUESTS = <span class="number">32</span> <span class="comment"># 并发量</span></span><br><span class="line">ODWNLOAD_DELAY = <span class="number">3</span> <span class="comment"># 下载延迟/秒</span></span><br><span class="line">CONCURRENT_REQUESTS_PER_DOMAIN = <span class="number">16</span> <span class="comment"># 域名并发量</span></span><br><span class="line">CONCURRENT_REQUESTS_PER_IP = <span class="number">16</span>     <span class="comment"># IP 并发量</span></span><br><span class="line">COOKIES_ENABLED = FALSE       <span class="comment"># cookies</span></span><br><span class="line">TELNETCONSOLE_ENABLED = <span class="literal">False</span> <span class="comment"># 远程控制台</span></span><br><span class="line">DEFAULT_REQUEST_HEADERS    <span class="comment"># 默认请求头</span></span><br><span class="line">SPIDER_MIDDLEWARES</span><br><span class="line">DOWNLOADER_MIDDLEWARES</span><br><span class="line">ITEM_PIPELINES</span><br></pre></td></tr></table></figure>
-
-<hr>
-<ul>
-<li>明确目标<br>  确定需要爬取的字段<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># douban -&gt; items.py</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubanItem</span>(<span class="params">scrapy.Item</span>):</span></span><br><span class="line">    name = scrapy.Field()</span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># douban -&gt; spiders -&gt; douban_spider</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubanSpiderSpider</span>(<span class="params">scrapy.Spider</span>):</span></span><br><span class="line">    <span class="keyword">from</span> douban.items <span class="keyword">import</span> DoubanItem</span><br><span class="line">    <span class="comment"># 爬虫名字</span></span><br><span class="line">    name = <span class="string">&#x27;douban_spider&#x27;</span></span><br><span class="line">    <span class="comment"># 允许的域名</span></span><br><span class="line">    allowed_domains = [<span class="string">&#x27;move.douban.com&#x27;</span>]</span><br><span class="line">    <span class="comment"># 入口 url</span></span><br><span class="line">    start_urls = [<span class="string">&#x27;https://movie.douban.com/top250&#x27;</span>]</span><br><span class="line">    <span class="comment"># 数据解析</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">paese</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        movie_list = response.xpath(<span class="string">&quot;//&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> movie_list:</span><br><span class="line">            douban_item[<span class="string">&#x27;name&#x27;</span>] = item.xpath(<span class="string">&quot;&quot;</span>)</span><br><span class="line">            <span class="keyword">yield</span> douban_item <span class="comment"># yield 到 pipelines</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 解析下一规则，取后页的 xpath</span></span><br><span class="line">    next_link = response.xpath(<span class="string">&quot;//&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> next_link:</span><br><span class="line">        next_link = next_link[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">yield</span> scrapy.Request(<span class="string">&quot;https://...&quot;</span> + next_link, callback = self.parse)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行爬取</span></span><br><span class="line"><span class="comment"># doubam -&gt; spiders</span></span><br><span class="line">scrapy crawl douban_spider.py</span><br></pre></td></tr></table></figure>
-<hr>
-<ul>
-<li>制作爬虫</li>
-</ul>
-<hr>
-<ul>
-<li>存储内容<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> douban</span></span><br><span class="line">scrapy crawl douban_spider -O movie.json</span><br><span class="line"><span class="meta">#</span><span class="bash"> scrapy crawl doubam_spider -O movie.csv</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<ul>
-<li>写入数据库<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># douban</span></span><br><span class="line">mongo_host = <span class="string">&#x27;&#x27;</span></span><br><span class="line">mongo_port = <span class="string">&#x27;&#x27;</span></span><br><span class="line">mongo_db_name = <span class="string">&#x27;douban&#x27;</span></span><br><span class="line">mongo_de_collection = <span class="string">&#x27;doban_movie&#x27;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pipelines.py</span></span><br><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line"><span class="keyword">from</span> douban.settings <span class="keyword">import</span> mongo_host, mongo_port, mongo_db_name, mongo_de_collection</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubanPipeline</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        host = mongo_host</span><br><span class="line">        port = mongo_port</span><br><span class="line">        dbname = mongo_db_name</span><br><span class="line">        sheetname = mongo_de_collection</span><br><span class="line">        client = pymongo.MongoClient(host=host, port=port)</span><br><span class="line">        mydb = client[dbname]</span><br><span class="line">        self.post = mydb[sheetname]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span>(<span class="params">self, item, spider</span>):</span></span><br><span class="line">        data = <span class="built_in">dict</span>(item)</span><br><span class="line">        self.post.insert(data)</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
-
-<hr>
-<ul>
-<li>Proxy Middleware<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># middleware.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">my_proxy</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span>(<span class="params">self, request, spider</span>):</span></span><br><span class="line">        request.mate[<span class="string">&#x27;proxy&#x27;</span>] = <span class="string">&#x27;http-cla.abuyun.com:9030&#x27;</span></span><br><span class="line">        proxy_name_pass = <span class="string">b&#x27;...&#x27;</span></span><br><span class="line">        encode_pass_name = base64.b64encode(proxy_name_pass)</span><br><span class="line">        <span class="comment"># Basic 有个空格</span></span><br><span class="line">        request.headers[<span class="string">&#x27;Proxy-Authorization&#x27;</span>] = <span class="string">&#x27;Basic &#x27;</span> + encode_pass_name.decode()</span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settngs</span></span><br><span class="line">DOWNLOADER_MIDDLEWARES = &#123;</span><br><span class="line">   <span class="comment"># 数值越小优先级越高</span></span><br><span class="line">   <span class="string">&#x27;douban.middlewares.my_proxy&#x27;</span>: <span class="number">543</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<ul>
-<li>User-Agent Middleware</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">my_UserAgent</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span>(<span class="params">self, request, spider</span>):</span></span><br><span class="line">        User_Agent_List = [</span><br><span class="line">            <span class="string">&#x27;User-Agent&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;User-Agent&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;User-Agent&#x27;</span>,</span><br><span class="line">        ]</span><br><span class="line">        agent = random.choice(User_Agent_List)</span><br><span class="line">        request.headers[<span class="string">&#x27;User_Agent&#x27;</span>] = agent</span><br></pre></td></tr></table></figure>
-
-<h1 id="settngs"><a href="#settngs" class="headerlink" title="settngs"></a>settngs</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DOWNLOADER_MIDDLEWARES = &#123;</span><br><span class="line">   <span class="comment"># 数值越小优先级越高</span></span><br><span class="line">   <span class="string">&#x27;douban.middlewares.my_proxy&#x27;</span>: <span class="number">544</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>ps:</p>
-<ul>
-<li>中间件定义完要在 settings 文件内启用</li>
-<li>爬虫文件名和爬虫名称不能相同，spiders 目录内不能存在相同爬虫名称的项目文件</li>
-</ul>
-<ul>
-<li>参考<br>domains = ‘<a target="_blank" rel="noopener" href="https://movie.douban.com/top250&#39;">https://movie.douban.com/top250&#39;</a><br>User-Agent = ‘Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4544.0 Safari/537.36 Edg/93.0.933.1’</li>
-</ul>
-
+        <h3 id="JS-有哪些数据类型"><a href="#JS-有哪些数据类型" class="headerlink" title="JS 有哪些数据类型"></a>JS 有哪些数据类型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(object)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.location)</span><br><span class="line"><span class="built_in">console</span>.dir(<span class="built_in">window</span>.location)</span><br><span class="line"><span class="built_in">console</span>.table([a,b,c])</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`%c <span class="subst">$&#123;a&#125;</span> is a number`</span>, <span class="string">&#x27;backgroud-color:green&#x27;</span>)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -301,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/06/scrapy-log/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/07/learn-JavaScript/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +267,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/07/07/learn-JavaScript/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          learn-JavaScript
+          Linux终端快捷命令
         
       </div>
     </a>
   
   
-    <a href="/2021/07/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一篇博客文章</div>
+    <a href="/2021/07/06/scrapy-log/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">scrapy log</div>
       <i class="icon-circle-right"></i>
     </a>
   
