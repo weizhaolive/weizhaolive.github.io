@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>对象迭代与反迭代相关问题与解决技巧 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="如何实现可迭代对象和迭代器对象如何使用生成器函数实现可迭代对象如何进行反向迭代以及如何实现反向迭代如何对迭代器做切片操作如何在一个for语句中迭代多个可迭代对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对象迭代与反迭代相关问题与解决技巧">
+<meta property="og:url" content="http://example.com/2021/07/10/%E5%AF%B9%E8%B1%A1%E8%BF%AD%E4%BB%A3%E4%B8%8E%E5%8F%8D%E8%BF%AD%E4%BB%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如何实现可迭代对象和迭代器对象如何使用生成器函数实现可迭代对象如何进行反向迭代以及如何实现反向迭代如何对迭代器做切片操作如何在一个for语句中迭代多个可迭代对象">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-10T05:36:54.000Z">
+<meta property="article:modified_time" content="2021-07-10T05:38:22.361Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,326 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-装饰器使用问题与技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-对象迭代与反迭代相关问题与解决技巧" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8A%80%E5%B7%A7/">装饰器使用问题与技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/10/%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2021-07-10T05:42:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何使用函数装饰器-mp4"><a href="#如何使用函数装饰器-mp4" class="headerlink" title="如何使用函数装饰器.mp4"></a>如何使用函数装饰器.mp4</h3><h3 id="如何为被装饰的函数保存元数据-mp4"><a href="#如何为被装饰的函数保存元数据-mp4" class="headerlink" title="如何为被装饰的函数保存元数据.mp4"></a>如何为被装饰的函数保存元数据.mp4</h3><h3 id="如何定义带参数的装饰器-mp4"><a href="#如何定义带参数的装饰器-mp4" class="headerlink" title="如何定义带参数的装饰器.mp4"></a>如何定义带参数的装饰器.mp4</h3><h3 id="如何实现属性可修改的函数装饰器-mp4"><a href="#如何实现属性可修改的函数装饰器-mp4" class="headerlink" title="如何实现属性可修改的函数装饰器.mp4"></a>如何实现属性可修改的函数装饰器.mp4</h3><h3 id="如何在类中定义装饰器-mp4"><a href="#如何在类中定义装饰器-mp4" class="headerlink" title="如何在类中定义装饰器.mp4"></a>如何在类中定义装饰器.mp4</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-多线程并发相关问题与解决技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">多线程并发相关问题与解决技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2021-07-10T05:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何使用多线程-mp4"><a href="#如何使用多线程-mp4" class="headerlink" title="如何使用多线程.mp4"></a>如何使用多线程.mp4</h3><h3 id="如何线程间通信-mp4"><a href="#如何线程间通信-mp4" class="headerlink" title="如何线程间通信.mp4"></a>如何线程间通信.mp4</h3><h3 id="如何在线程间进行事件通知-mp4-mp4"><a href="#如何在线程间进行事件通知-mp4-mp4" class="headerlink" title="如何在线程间进行事件通知.mp4.mp4"></a>如何在线程间进行事件通知.mp4.mp4</h3><h3 id="如何使用线程本地数据-mp4"><a href="#如何使用线程本地数据-mp4" class="headerlink" title="如何使用线程本地数据.mp4"></a>如何使用线程本地数据.mp4</h3><h3 id="如何使用线程池-mp4"><a href="#如何使用线程池-mp4" class="headerlink" title="如何使用线程池.mp4"></a>如何使用线程池.mp4</h3><h3 id="如何使用多进程-mp4"><a href="#如何使用多进程-mp4" class="headerlink" title="如何使用多进程.mp4"></a>如何使用多进程.mp4</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-类与对象深度问题与解决技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E6%B7%B1%E5%BA%A6%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">类与对象深度问题与解决技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/10/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E6%B7%B1%E5%BA%A6%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2021-07-10T05:41:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何派生内置不可变类型并修其改实例化行为-mp4"><a href="#如何派生内置不可变类型并修其改实例化行为-mp4" class="headerlink" title="如何派生内置不可变类型并修其改实例化行为.mp4"></a>如何派生内置不可变类型并修其改实例化行为.mp4</h3><h3 id="如何为创建大量实例节省内存-mp4"><a href="#如何为创建大量实例节省内存-mp4" class="headerlink" title="如何为创建大量实例节省内存.mp4"></a>如何为创建大量实例节省内存.mp4</h3><h3 id="如何让对象支持上下文管理-mp4"><a href="#如何让对象支持上下文管理-mp4" class="headerlink" title="如何让对象支持上下文管理.mp4"></a>如何让对象支持上下文管理.mp4</h3><h3 id="如何创建可管理的对象属性-mp4"><a href="#如何创建可管理的对象属性-mp4" class="headerlink" title="如何创建可管理的对象属性.mp4"></a>如何创建可管理的对象属性.mp4</h3><h3 id="如何让类支持比较操作-mp4"><a href="#如何让类支持比较操作-mp4" class="headerlink" title="如何让类支持比较操作.mp4"></a>如何让类支持比较操作.mp4</h3><h3 id="如何使用描述符对实例属性做类型检查-mp4"><a href="#如何使用描述符对实例属性做类型检查-mp4" class="headerlink" title="如何使用描述符对实例属性做类型检查.mp4"></a>如何使用描述符对实例属性做类型检查.mp4</h3><h3 id="如何在环状数据结构中管理内存-mp4"><a href="#如何在环状数据结构中管理内存-mp4" class="headerlink" title="如何在环状数据结构中管理内存.mp4"></a>如何在环状数据结构中管理内存.mp4</h3><h3 id="如何通过实例方法名字的字符串调用方法-mp4"><a href="#如何通过实例方法名字的字符串调用方法-mp4" class="headerlink" title="如何通过实例方法名字的字符串调用方法.mp4"></a>如何通过实例方法名字的字符串调用方法.mp4</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E6%B7%B1%E5%BA%A6%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据解析与构建相关问题与解决技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%9E%84%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">数据解析与构建相关问题与解决技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/10/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%9E%84%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2021-07-10T05:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何读写csv数据-mp4"><a href="#如何读写csv数据-mp4" class="headerlink" title="如何读写csv数据.mp4"></a>如何读写csv数据.mp4</h3><h3 id="如何读写json数据-mp4"><a href="#如何读写json数据-mp4" class="headerlink" title="如何读写json数据.mp4"></a>如何读写json数据.mp4</h3><h3 id="如何解析简单的xml文档-mp4"><a href="#如何解析简单的xml文档-mp4" class="headerlink" title="如何解析简单的xml文档.mp4"></a>如何解析简单的xml文档.mp4</h3><h3 id="如何构建xml文档-mp4"><a href="#如何构建xml文档-mp4" class="headerlink" title="如何构建xml文档.mp4"></a>如何构建xml文档.mp4</h3><h3 id="如何读写excel文件-mp4"><a href="#如何读写excel文件-mp4" class="headerlink" title="如何读写excel文件.mp4"></a>如何读写excel文件.mp4</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%9E%84%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-文件IO效率相关问题与解决技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E6%96%87%E4%BB%B6IO%E6%95%88%E7%8E%87%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">文件IO效率相关问题与解决技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/10/%E6%96%87%E4%BB%B6IO%E6%95%88%E7%8E%87%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2021-07-10T05:39:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何读写文本文件-mp4"><a href="#如何读写文本文件-mp4" class="headerlink" title="如何读写文本文件.mp4"></a>如何读写文本文件.mp4</h3><h3 id="如何处理二进制文件-mp4"><a href="#如何处理二进制文件-mp4" class="headerlink" title="如何处理二进制文件.mp4"></a>如何处理二进制文件.mp4</h3><h3 id="如何设置文件的缓冲-mp4"><a href="#如何设置文件的缓冲-mp4" class="headerlink" title="如何设置文件的缓冲.mp4"></a>如何设置文件的缓冲.mp4</h3><h3 id="如何将文件映射到内存-mp4"><a href="#如何将文件映射到内存-mp4" class="headerlink" title="如何将文件映射到内存.mp4"></a>如何将文件映射到内存.mp4</h3><h3 id="如何访问文件的状态-mp4"><a href="#如何访问文件的状态-mp4" class="headerlink" title="如何访问文件的状态.mp4"></a>如何访问文件的状态.mp4</h3><h3 id="如何使用临时文件-mp4"><a href="#如何使用临时文件-mp4" class="headerlink" title="如何使用临时文件.mp4"></a>如何使用临时文件.mp4</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E6%96%87%E4%BB%B6IO%E6%95%88%E7%8E%87%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-对象迭代与反迭代相关问题与解决技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E5%AF%B9%E8%B1%A1%E8%BF%AD%E4%BB%A3%E4%B8%8E%E5%8F%8D%E8%BF%AD%E4%BB%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">对象迭代与反迭代相关问题与解决技巧</a>
+    <h1 class="article-title" itemprop="name">
+      对象迭代与反迭代相关问题与解决技巧
     </h1>
   
 
@@ -486,6 +178,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -493,16 +206,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E5%AF%B9%E8%B1%A1%E8%BF%AD%E4%BB%A3%E4%B8%8E%E5%8F%8D%E8%BF%AD%E4%BB%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/10/%E5%AF%B9%E8%B1%A1%E8%BF%AD%E4%BB%A3%E4%B8%8E%E5%8F%8D%E8%BF%AD%E4%BB%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/07/10/%E6%96%87%E4%BB%B6IO%E6%95%88%E7%8E%87%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          文件IO效率相关问题与解决技巧
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/07/10/%E5%A4%8D%E6%9D%82%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">复杂场景下字符串处理相关问题与解决技巧</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -522,326 +303,14 @@
 
 
 
-
-  
-    <article id="post-复杂场景下字符串处理相关问题与解决技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E5%A4%8D%E6%9D%82%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">复杂场景下字符串处理相关问题与解决技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/10/%E5%A4%8D%E6%9D%82%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2021-07-10T05:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何拆分含有多种分隔符的字符串"><a href="#如何拆分含有多种分隔符的字符串" class="headerlink" title="如何拆分含有多种分隔符的字符串"></a>如何拆分含有多种分隔符的字符串</h3><h3 id="如何判断字符串a是否以字符串b开头或结尾"><a href="#如何判断字符串a是否以字符串b开头或结尾" class="headerlink" title="如何判断字符串a是否以字符串b开头或结尾"></a>如何判断字符串a是否以字符串b开头或结尾</h3><h3 id="如何调整字符串中文本的格式"><a href="#如何调整字符串中文本的格式" class="headerlink" title="如何调整字符串中文本的格式"></a>如何调整字符串中文本的格式</h3><h3 id="如何将多个小字符串拼接成一个大的字符串"><a href="#如何将多个小字符串拼接成一个大的字符串" class="headerlink" title="如何将多个小字符串拼接成一个大的字符串"></a>如何将多个小字符串拼接成一个大的字符串</h3><h3 id="如何对字符串进行左-右-居中对齐"><a href="#如何对字符串进行左-右-居中对齐" class="headerlink" title="如何对字符串进行左, 右, 居中对齐"></a>如何对字符串进行左, 右, 居中对齐</h3><h3 id="如何去掉字符串中不需要的字符"><a href="#如何去掉字符串中不需要的字符" class="headerlink" title="如何去掉字符串中不需要的字符"></a>如何去掉字符串中不需要的字符</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E5%A4%8D%E6%9D%82%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构与算法相关问题与解决技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">数据结构与算法相关问题与解决技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2021-07-10T04:23:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何在列表，字典，集合中根据条件筛选数据"><a href="#如何在列表，字典，集合中根据条件筛选数据" class="headerlink" title="如何在列表，字典，集合中根据条件筛选数据"></a>如何在列表，字典，集合中根据条件筛选数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="comment"># 过滤掉列表中的负数</span></span><br><span class="line"><span class="comment"># 1.列表解析</span></span><br><span class="line">[x <span class="keyword">for</span> x <span class="keyword">in</span> data <span class="keyword">if</span> x &gt;= <span class="number">0</span>]</span><br><span class="line"><span class="comment"># 2.filter 函数</span></span><br><span class="line"><span class="built_in">filter</span>(<span class="keyword">lambda</span> x:x &gt;= <span class="number">0</span>, data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典解析</span></span><br><span class="line"><span class="comment"># 筛选字典中值高于 90 的项</span></span><br><span class="line">&#123;k: v <span class="keyword">for</span> k, v <span class="keyword">in</span> d.items() <span class="keyword">if</span> v &gt; <span class="number">90</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 集合解析</span></span><br><span class="line"><span class="comment"># 赛选集合中能 3 整除的数</span></span><br><span class="line">&#123;x <span class="keyword">for</span> x <span class="keyword">in</span> s <span class="keyword">if</span> x%<span class="number">3</span> == <span class="number">0</span>&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="如何为元组中的每个元素命名-提高程序可读性"><a href="#如何为元组中的每个元素命名-提高程序可读性" class="headerlink" title="如何为元组中的每个元素命名, 提高程序可读性"></a>如何为元组中的每个元素命名, 提高程序可读性</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 优点：元组比字典更加节省空间</span></span><br><span class="line"><span class="comment"># 缺点：只能下标访问，降低程序可读性</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.使用 range 来定义数值常量</span></span><br><span class="line">NAME, AGE, SEX, EMAIL = <span class="built_in">range</span>(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.使用枚举</span></span><br><span class="line"><span class="keyword">from</span> enum <span class="keyword">import</span> IntEnum</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentEnum</span>(<span class="params">IntEnum</span>):</span></span><br><span class="line">   NAME = <span class="number">0</span></span><br><span class="line">   AGE = <span class="number">1</span></span><br><span class="line">   SEX = <span class="number">2</span></span><br><span class="line">   EMAIL = <span class="number">3</span></span><br><span class="line">StudentEnum.NAME <span class="comment"># &lt;StudentEnum.NAME: 0&gt;</span></span><br><span class="line"><span class="built_in">isinstance</span>(StudentEnum.NAME <span class="built_in">int</span>) <span class="comment"># True</span></span><br><span class="line">StudentEnum.NAME == <span class="number">1</span> <span class="comment"># True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line"></span><br><span class="line">Student = namedtuple(<span class="string">&#x27;Student&#x27;</span>, [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;sex&#x27;</span>, <span class="string">&#x27;email&#x27;</span>])</span><br><span class="line">s = Studnt(<span class="string">&#x27;Jim&#x27;</span>, age=<span class="number">16</span>, sex=<span class="string">&#x27;male&#x27;</span>, email=<span class="string">&#x27;jim110@gmail.com&#x27;</span>)</span><br><span class="line"><span class="built_in">isinstance</span>(s2, <span class="built_in">tuple</span>) <span class="comment"># True</span></span><br><span class="line">s2[<span class="number">0</span>] <span class="comment"># Jim</span></span><br><span class="line">s2.name <span class="comment"># Jim</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="如何根据字典中值的大小-对字典中的项排序"><a href="#如何根据字典中值的大小-对字典中的项排序" class="headerlink" title="如何根据字典中值的大小, 对字典中的项排序"></a>如何根据字典中值的大小, 对字典中的项排序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将字典中的各项转换为元组，使用内置函数 sorted 排序</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">2</span>) &gt; (<span class="number">1</span>, <span class="number">4</span>) <span class="comment"># True</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">2</span>) &gt; (<span class="number">3</span>, <span class="number">4</span>) <span class="comment"># False</span></span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>将字典中的项转化为 (key, val) 元组。(列表解析式或 <span class="built_in">zip</span>)</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line">d = &#123;k: randint(<span class="number">60</span>, <span class="number">100</span>) <span class="keyword">for</span> k <span class="keyword">in</span> <span class="string">&#x27;abcdefgh&#x27;</span>&#125;</span><br><span class="line">l = [(v, k) <span class="keyword">for</span> k, v <span class="keyword">in</span> d.items()]</span><br><span class="line"><span class="built_in">sorted</span>(l)</span><br><span class="line"><span class="built_in">sorted</span>(l, reverse=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">z = <span class="built_in">zip</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"><span class="built_in">list</span>(z)</span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">zip</span>(d.values(), d.keys()))</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>传递 <span class="built_in">sorted</span> 函数的 key 参数</span><br><span class="line">d.items()</span><br><span class="line">p = <span class="built_in">sorted</span>(d.items(), key=<span class="keyword">lambda</span> item:item[<span class="number">1</span>], reverse=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加排名功能</span></span><br><span class="line"><span class="built_in">enumerate</span>(p)</span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">enumerate</span>(p))</span><br><span class="line"><span class="keyword">for</span> i, (k, v) <span class="keyword">in</span> <span class="built_in">enumerate</span>(p, <span class="number">1</span>):</span><br><span class="line">   d[k] = (i, v)</span><br><span class="line">&#123;k: (i, v) <span class="keyword">for</span> i, (k, v) <span class="keyword">in</span> <span class="built_in">enumerate</span>(p, <span class="number">1</span>)&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="如何统计序列中元素的频度"><a href="#如何统计序列中元素的频度" class="headerlink" title="如何统计序列中元素的频度"></a>如何统计序列中元素的频度</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.将序列转换为字典 &#123;元素：频度&#125;，根据字典中的值排序</span></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line">data = [randint(<span class="number">0</span>, <span class="number">20</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">30</span>)]</span><br><span class="line">d = <span class="built_in">dict</span>.fromkey(data, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> data:</span><br><span class="line">   d[x] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sorted([(v, k) for k, v in d.items()], reverse=True)</span></span><br><span class="line"><span class="built_in">sorted</span>([(v, k) <span class="keyword">for</span> k, v <span class="keyword">in</span> d.items()], reverse=<span class="literal">True</span>)[:<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.使用堆排序</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heapq.nlargest(<span class="number">3</span>, ((v, k) <span class="keyword">for</span> k, v <span class="keyword">in</span> d.items()))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.使用标准库 Counter 对象</span></span><br><span class="line">c = Counter(data)</span><br><span class="line">c.most_common(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">思考：实现一次词频统计</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="如何快速找到多个字典中的公共键-key"><a href="#如何快速找到多个字典中的公共键-key" class="headerlink" title="如何快速找到多个字典中的公共键(key)"></a>如何快速找到多个字典中的公共键(key)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint, sample</span><br><span class="line">sample(<span class="string">&#x27;abcdefgh&#x27;</span>, <span class="number">3</span>)</span><br><span class="line">sample(<span class="string">&#x27;abcdefgh&#x27;</span>, randint(<span class="number">3</span>,<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">d1 = &#123;k: randint(<span class="number">1</span>, <span class="number">4</span>) <span class="keyword">for</span> k <span class="keyword">in</span> sample(<span class="string">&#x27;abcdefgh&#x27;</span>, randint(<span class="number">3</span>, <span class="number">6</span>))&#125;</span><br><span class="line">d2 = &#123;k: randint(<span class="number">1</span>, <span class="number">4</span>) <span class="keyword">for</span> k <span class="keyword">in</span> sample(<span class="string">&#x27;abcdefgh&#x27;</span>, randint(<span class="number">3</span>, <span class="number">6</span>))&#125;</span><br><span class="line">d3 = &#123;k: randint(<span class="number">1</span>, <span class="number">4</span>) <span class="keyword">for</span> k <span class="keyword">in</span> sample(<span class="string">&#x27;abcdefgh&#x27;</span>, randint(<span class="number">3</span>, <span class="number">6</span>))&#125;</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> d1:</span><br><span class="line">   <span class="keyword">if</span> k <span class="keyword">in</span> d2 <span class="keyword">and</span> k <span class="keyword">in</span> d3:</span><br><span class="line">      <span class="built_in">print</span>(k)</span><br><span class="line"><span class="comment"># [k for k in d1 if k in d2 and k in d3]</span></span><br><span class="line"></span><br><span class="line">dl = [d1, d2, d3...]</span><br><span class="line">[<span class="keyword">for</span> k <span class="keyword">in</span> dl[<span class="number">0</span>] <span class="keyword">if</span> <span class="built_in">all</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> d: k <span class="keyword">in</span> d, dl[<span class="number">1</span>:]))]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用集合(set)的交集操作</span></span><br><span class="line"><span class="comment"># Step1: 使用字典的keys0方法,得到一个字典keys的集合</span></span><br><span class="line"><span class="comment"># Step2: 使用map函数,得到每个字典keys的集合</span></span><br><span class="line"><span class="comment"># Step3: 使用 reduce函数,取所有字典的keys集合的交集</span></span><br><span class="line">s1 = d1.keys()</span><br><span class="line">s2 = d2.keys()</span><br><span class="line">s1 &amp; s2</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> function <span class="keyword">import</span> reduce</span><br><span class="line"><span class="comment"># d1.keys() == dict.keys(d1)</span></span><br><span class="line"></span><br><span class="line">reduce(<span class="keyword">lambda</span> a, b: a &amp; b, <span class="built_in">map</span>(<span class="built_in">dict</span>.keys, dl))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="如何让字典保持有序"><a href="#如何让字典保持有序" class="headerlink" title="如何让字典保持有序"></a>如何让字典保持有序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用标准库 collections 中的 OrderedDict</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line">od = OrderedDict()</span><br><span class="line">od[<span class="string">&#x27;c&#x27;</span>] = <span class="number">1</span></span><br><span class="line">od[<span class="string">&#x27;b&#x27;</span>] = <span class="number">2</span></span><br><span class="line">od[<span class="string">&#x27;a&#x27;</span>] = <span class="number">3</span></span><br><span class="line">od.keys()</span><br><span class="line"></span><br><span class="line">players = <span class="built_in">list</span>(<span class="string">&#x27;abcdefgh&#x27;</span>)</span><br><span class="line">shuffle(players)</span><br><span class="line"></span><br><span class="line">od = OrderedDict()</span><br><span class="line"><span class="keyword">for</span> <span class="keyword">in</span> <span class="built_in">enumerate</span>(players, <span class="number">1</span>):</span><br><span class="line">   od[p] = i</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query_by_name</span>(<span class="params">d, name</span>):</span></span><br><span class="line">   <span class="keyword">return</span> d[name]</span><br><span class="line"></span><br><span class="line"><span class="built_in">iter</span>(od)[<span class="number">3</span>] <span class="comment"># error</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> islice</span><br><span class="line">islice(<span class="built_in">range</span>(<span class="number">10</span>), <span class="number">3</span>, <span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query_by_order</span>(<span class="params">d, a, b=<span class="literal">None</span></span>):</span></span><br><span class="line">   a -= <span class="number">1</span></span><br><span class="line">   <span class="keyword">if</span> b <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">      b = a + <span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">list</span>(islice(od, a, b))</span><br><span class="line">query_by_order(od, <span class="number">4</span>)</span><br><span class="line">query_by_order(od, <span class="number">3</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="如何实现用户的历史记录功能-最多n条"><a href="#如何实现用户的历史记录功能-最多n条" class="headerlink" title="如何实现用户的历史记录功能(最多n条)"></a>如何实现用户的历史记录功能(最多n条)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用标准库 collections 中的 deque，它是一个双端队列</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">q = deque([], <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 pickle 口快将历史记录存储到硬盘，以便下次启动使用</span></span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">pickle.dump(q,  <span class="built_in">open</span>(<span class="string">&#x27;save.pkl&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>))</span><br><span class="line">pickle.load(<span class="built_in">open</span>(<span class="string">&#x27;save.pkl&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-安装Python虚拟环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">安装Python虚拟环境</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="archive-article-date">
-  	<time datetime="2021-07-09T12:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.先检查pip是否是最新版本or升级</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --upgrade pip</span><br></pre></td></tr></table></figure>
-
-<p>2.安装virtualenv及扩展包</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenv <span class="comment">#安装虚拟环境</span></span><br><span class="line">sudo pip install virtualenvwrapper <span class="comment">#安装虚拟环境扩展包</span></span><br><span class="line">virtualenv --version  <span class="comment">#查看虚拟环境是否安装成功</span></span><br><span class="line"><span class="number">16.7</span><span class="number">.2</span>  <span class="comment">#显示已安装的版本号</span></span><br><span class="line"><span class="comment">#如果安装过可更新</span></span><br><span class="line">pip install --upgrade virtualenv  <span class="comment">#更新虚拟环境</span></span><br></pre></td></tr></table></figure>
-
-<p>3.创建存放Python虚拟环境的文件夹并进入该文件夹</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.virtualenvs  <span class="comment">#创建加密文件夹</span></span><br><span class="line">cd ~/.virtualenvs  <span class="comment">#进入文件夹</span></span><br></pre></td></tr></table></figure>
-
-<p>4.查看python3和virtualenvwrapper.sh的路径并保存下来</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">which python3</span><br><span class="line">which virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
-
-<p>5.编辑环境变量</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"></span><br><span class="line">export WORKON_HOME=<span class="string">&#x27;~/.virtualenvs&#x27;</span></span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=<span class="string">&#x27;Python3路径&#x27;</span></span><br><span class="line">source virtualenvwrapper.sh路径</span><br><span class="line"></span><br><span class="line"><span class="comment">#例如：</span></span><br><span class="line">export WORKON_HOME=<span class="string">&#x27;~/.virtualenvs&#x27;</span></span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=<span class="string">&#x27;/Library/Frameworks/Python.framework/Versions/3.7/bin/python3&#x27;</span></span><br><span class="line">source /Library/Frameworks/Python.framework/Versions/<span class="number">3.7</span>/<span class="built_in">bin</span>/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
-
-<p>6.更新环境变量</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-
-<p>7.进入存放虚拟环境的文件夹并创建虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#第一种方式</span><br><span class="line">cd ~/.virtualenvs</span><br><span class="line">mkvirtualenv -p python3 虚拟环境名字  #（名字为虚拟环境名称，自己随便取）</span><br><span class="line"></span><br><span class="line">#第二种方式</span><br><span class="line">python3 -m venv env_01  #在终端中切换到项目目录，使用Python3运行venv模块，创建一个名为env_01的虚拟环境</span><br><span class="line"></span><br><span class="line">#第三种方式</span><br><span class="line">mkdir env_02  #上面两种是创建环境这个只是目录</span><br></pre></td></tr></table></figure>
-
-<p>8.进入虚拟环境工作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">workon 虚拟环境名</span><br><span class="line">workon 空格 + 两个tab键 #暂时不知道差别在哪,在没创建虚拟环境时这个出现的是本机上所有的虚拟环境。</span><br><span class="line">workon  #这个显示的下级存在的虚拟环境</span><br></pre></td></tr></table></figure>
-
-<p>9.退出虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
-
-<p>10.删除虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmvirtualenv 虚拟环境名</span><br></pre></td></tr></table></figure>
-
-<p>11.虚拟环境下安装包的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 包名</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux终端快捷命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/">Linux终端快捷命令</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2021-07-09T11:58:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>Tab</li>
-<li>Ctrl + C<br>在终端上中断命令或进程该。它将立刻终止运行的程序。</li>
-<li>Ctrl + Z<br>将正在运行的程序送到后台。通常，你可以在使用 &amp; 选项运行程序前之完成该操作， 但是如果你忘记使用选项运行程序，就使用这对组合键</li>
-<li>Ctrl + D<br>退出当前终端。如果你使用 SSH 连接，它将会关闭。如果你直接使用一个终端，该应用将会立刻关闭。</li>
-<li>Ctrl + L<br>清空终端屏幕，相当于 clear 命名。</li>
-</ol>
-<hr>
-<ol start="6">
-<li>Ctrl + A<br>移动光标到所在行首。</li>
-<li>Ctrl + E<br>移动光标到行尾。</li>
-<li>Ctrl + U<br>擦除当前光标位置到行首的全部内容。</li>
-<li>Ctrl + K<br>擦除当前光标位置到行尾的全部内容。</li>
-<li>Ctrl + W<br>擦除光标位置前的单词。</li>
-<li>Ctrl + Y<br>粘贴使用 Ctrl+W，Ctrl+U 和 Ctrl+K 快捷键擦除的文本。</li>
-<li>Ctrl + P<br>显示上一个命令。</li>
-<li>Ctrl + N<br>显示下一个命令。</li>
-<li>Ctrl + R<br>搜索历史命令。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -864,8 +333,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
