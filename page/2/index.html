@@ -152,6 +152,181 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-安装Python虚拟环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">安装Python虚拟环境</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+  	<time datetime="2021-07-09T12:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.先检查pip是否是最新版本or升级</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --upgrade pip</span><br></pre></td></tr></table></figure>
+
+<p>2.安装virtualenv及扩展包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenv <span class="comment">#安装虚拟环境</span></span><br><span class="line">sudo pip install virtualenvwrapper <span class="comment">#安装虚拟环境扩展包</span></span><br><span class="line">virtualenv --version  <span class="comment">#查看虚拟环境是否安装成功</span></span><br><span class="line"><span class="number">16.7</span><span class="number">.2</span>  <span class="comment">#显示已安装的版本号</span></span><br><span class="line"><span class="comment">#如果安装过可更新</span></span><br><span class="line">pip install --upgrade virtualenv  <span class="comment">#更新虚拟环境</span></span><br></pre></td></tr></table></figure>
+
+<p>3.创建存放Python虚拟环境的文件夹并进入该文件夹</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.virtualenvs  <span class="comment">#创建加密文件夹</span></span><br><span class="line">cd ~/.virtualenvs  <span class="comment">#进入文件夹</span></span><br></pre></td></tr></table></figure>
+
+<p>4.查看python3和virtualenvwrapper.sh的路径并保存下来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">which python3</span><br><span class="line">which virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+
+<p>5.编辑环境变量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"></span><br><span class="line">export WORKON_HOME=<span class="string">&#x27;~/.virtualenvs&#x27;</span></span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=<span class="string">&#x27;Python3路径&#x27;</span></span><br><span class="line">source virtualenvwrapper.sh路径</span><br><span class="line"></span><br><span class="line"><span class="comment">#例如：</span></span><br><span class="line">export WORKON_HOME=<span class="string">&#x27;~/.virtualenvs&#x27;</span></span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=<span class="string">&#x27;/Library/Frameworks/Python.framework/Versions/3.7/bin/python3&#x27;</span></span><br><span class="line">source /Library/Frameworks/Python.framework/Versions/<span class="number">3.7</span>/<span class="built_in">bin</span>/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+
+<p>6.更新环境变量</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>7.进入存放虚拟环境的文件夹并创建虚拟环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#第一种方式</span><br><span class="line">cd ~/.virtualenvs</span><br><span class="line">mkvirtualenv -p python3 虚拟环境名字  #（名字为虚拟环境名称，自己随便取）</span><br><span class="line"></span><br><span class="line">#第二种方式</span><br><span class="line">python3 -m venv env_01  #在终端中切换到项目目录，使用Python3运行venv模块，创建一个名为env_01的虚拟环境</span><br><span class="line"></span><br><span class="line">#第三种方式</span><br><span class="line">mkdir env_02  #上面两种是创建环境这个只是目录</span><br></pre></td></tr></table></figure>
+
+<p>8.进入虚拟环境工作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">workon 虚拟环境名</span><br><span class="line">workon 空格 + 两个tab键 #暂时不知道差别在哪,在没创建虚拟环境时这个出现的是本机上所有的虚拟环境。</span><br><span class="line">workon  #这个显示的下级存在的虚拟环境</span><br></pre></td></tr></table></figure>
+
+<p>9.退出虚拟环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+
+<p>10.删除虚拟环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmvirtualenv 虚拟环境名</span><br></pre></td></tr></table></figure>
+
+<p>11.虚拟环境下安装包的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 包名</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux终端快捷命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/">Bash 终端快捷命令</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2021-07-09T11:58:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Tab</li>
+<li>Ctrl + C<br>在终端上中断命令或进程该。它将立刻终止运行的程序。</li>
+<li>Ctrl + Z<br>将正在运行的程序送到后台。通常，你可以在使用 &amp; 选项运行程序前之完成该操作， 但是如果你忘记使用选项运行程序，就使用这对组合键</li>
+<li>Ctrl + D<br>退出当前终端。如果你使用 SSH 连接，它将会关闭。如果你直接使用一个终端，该应用将会立刻关闭。</li>
+<li>Ctrl + L<br>清空终端屏幕，相当于 clear 命名。</li>
+</ol>
+<hr>
+<ol start="6">
+<li>Ctrl + A<br>移动光标到所在行首。</li>
+<li>Ctrl + E<br>移动光标到行尾。</li>
+<li>Ctrl + U<br>擦除当前光标位置到行首的全部内容。</li>
+<li>Ctrl + K<br>擦除当前光标位置到行尾的全部内容。</li>
+<li>Ctrl + W<br>擦除光标位置前的单词。</li>
+<li>Ctrl + Y<br>粘贴使用 Ctrl+W，Ctrl+U 和 Ctrl+K 快捷键擦除的文本。</li>
+<li>Ctrl + P<br>显示上一个命令。</li>
+<li>Ctrl + N<br>显示下一个命令。</li>
+<li>Ctrl + R<br>搜索历史命令。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="diary-learn-JavaScript" class="article article-type-diary  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -152,6 +152,179 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="python-Python标准库os模块" class="article article-type-python  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/13/Python%E6%A0%87%E5%87%86%E5%BA%93os%E6%A8%A1%E5%9D%97/">模块</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/13/Python%E6%A0%87%E5%87%86%E5%BA%93os%E6%A8%A1%E5%9D%97/" class="archive-article-date">
+  	<time datetime="2021-07-13T06:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="访问文件"><a href="#访问文件" class="headerlink" title="访问文件"></a>访问文件</h3><ul>
+<li><p>os.open(path, flags)</p>
+</li>
+<li><p>os.read(df, count: byte)</p>
+</li>
+<li><p>os.write(fd, binary)</p>
+</li>
+<li><p>os.close(fd)</p>
+</li>
+</ul>
+<h3 id="访问目录"><a href="#访问目录" class="headerlink" title="访问目录"></a>访问目录</h3><ul>
+<li><p>os.getcwd()</p>
+</li>
+<li><p>os.chdir(path)</p>
+</li>
+<li><p>os.listdir(path)</p>
+</li>
+<li><p>os.mkdir(path)</p>
+</li>
+</ul>
+<h3 id="路径名"><a href="#路径名" class="headerlink" title="路径名"></a>路径名</h3><h4 id="os-path"><a href="#os-path" class="headerlink" title="os.path"></a>os.path</h4><ul>
+<li><p>os.path.basename(path)</p>
+</li>
+<li><p>os.path.dirname(path)</p>
+</li>
+<li><p>os.sep()</p>
+</li>
+<li><p>os .path.join(*args)</p>
+</li>
+<li><p>os.path.exists(path)</p>
+</li>
+</ul>
+<h3 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h3><ul>
+<li><p>os.path.getsize(path)</p>
+</li>
+<li><p>os.path.isfile(path)</p>
+</li>
+<li><p>os.path.isdir(path)</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/13/Python%E6%A0%87%E5%87%86%E5%BA%93os%E6%A8%A1%E5%9D%97/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Gin框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/10/Gin%E6%A1%86%E6%9E%B6/">Gin框架</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/10/Gin%E6%A1%86%E6%9E%B6/" class="archive-article-date">
+  	<time datetime="2021-07-10T07:03:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="GIN框架"><a href="#GIN框架" class="headerlink" title="GIN框架"></a>GIN框架</h2><p>goland配置环境</p>
+<h2 id="安装gin"><a href="#安装gin" class="headerlink" title="安装gin"></a>安装gin</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// start/main.go</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	r.GET(<span class="string">&quot;/ping&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;</span><br><span class="line">		c.JSON(<span class="number">200</span>, gin.H&#123;</span><br><span class="line">			<span class="string">&quot;message&quot;</span>:<span class="string">&quot;pong&quot;</span>,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// curl -X GET &quot;http://localhost:8080&quot;</span></span><br><span class="line">	r.Run() <span class="comment">// 8080</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="请求路由"><a href="#请求路由" class="headerlink" title="请求路由"></a>请求路由</h3><h5 id="设置多种请求类型"><a href="#设置多种请求类型" class="headerlink" title="设置多种请求类型"></a>设置多种请求类型</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router_type/main.go</span></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	<span class="comment">// GET method</span></span><br><span class="line">	r.GET(<span class="string">&quot;/get&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;</span><br><span class="line">		c.String(<span class="number">200</span>, <span class="string">&quot;get&quot;</span>)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// POST method</span></span><br><span class="line">	r.POST(<span class="string">&quot;post&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;</span><br><span class="line">		c.String(<span class="number">200</span>, <span class="string">&quot;post&quot;</span>)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// DELETE method</span></span><br><span class="line">	r.Handle(<span class="string">&quot;DELETE&quot;</span>, <span class="string">&quot;delete&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;</span><br><span class="line">		c.String(<span class="number">200</span>, <span class="string">&quot;delete&quot;</span>)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// ANY</span></span><br><span class="line">	<span class="comment">// curl -X CONNECT &quot;http://localhost:8080/any&quot;</span></span><br><span class="line">	r.Any(<span class="string">&quot;/any&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;</span><br><span class="line">		c.String(<span class="number">200</span>, <span class="string">&quot;any&quot;</span>)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// curl -X [GET/POST/DELETE] &quot;http://localhost:8080/[get/post/delete]&quot;</span></span><br><span class="line">	r.Run()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="绑定静态文件"><a href="#绑定静态文件" class="headerlink" title="绑定静态文件"></a>绑定静态文件</h5><h5 id="参数作为URL"><a href="#参数作为URL" class="headerlink" title="参数作为URL"></a>参数作为URL</h5><h5 id="泛绑定"><a href="#泛绑定" class="headerlink" title="泛绑定"></a>泛绑定</h5><h3 id="获取请求参数"><a href="#获取请求参数" class="headerlink" title="获取请求参数"></a>获取请求参数</h3><h5 id="获取GET请求参数"><a href="#获取GET请求参数" class="headerlink" title="获取GET请求参数"></a>获取GET请求参数</h5><h5 id="获取POST请求参数"><a href="#获取POST请求参数" class="headerlink" title="获取POST请求参数"></a>获取POST请求参数</h5><h5 id="获取Body值"><a href="#获取Body值" class="headerlink" title="获取Body值"></a>获取Body值</h5><h5 id="获取bind绑定结构"><a href="#获取bind绑定结构" class="headerlink" title="获取bind绑定结构"></a>获取bind绑定结构</h5><h3 id="验证请求参数"><a href="#验证请求参数" class="headerlink" title="验证请求参数"></a>验证请求参数</h3><h5 id="结构体bingding验证"><a href="#结构体bingding验证" class="headerlink" title="结构体bingding验证"></a>结构体bingding验证</h5><h5 id="自定义验证"><a href="#自定义验证" class="headerlink" title="自定义验证"></a>自定义验证</h5><h5 id="升级验证-支持多语言错误信息"><a href="#升级验证-支持多语言错误信息" class="headerlink" title="升级验证 - 支持多语言错误信息"></a>升级验证 - 支持多语言错误信息</h5><h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><h5 id="使用gin中间件"><a href="#使用gin中间件" class="headerlink" title="使用gin中间件"></a>使用gin中间件</h5><h5 id="自定义ip白名单中间件"><a href="#自定义ip白名单中间件" class="headerlink" title="自定义ip白名单中间件"></a>自定义ip白名单中间件</h5><h3 id="其他补充"><a href="#其他补充" class="headerlink" title="其他补充"></a>其他补充</h3><h5 id="优雅关停"><a href="#优雅关停" class="headerlink" title="优雅关停"></a>优雅关停</h5><h5 id="模版渲染"><a href="#模版渲染" class="headerlink" title="模版渲染"></a>模版渲染</h5><h5 id="自动证书"><a href="#自动证书" class="headerlink" title="自动证书"></a>自动证书</h5><h2 id="搭建企业级脚手架"><a href="#搭建企业级脚手架" class="headerlink" title="搭建企业级脚手架"></a>搭建企业级脚手架</h2><h4 id="功能展示"><a href="#功能展示" class="headerlink" title="功能展示"></a>功能展示</h4><h4 id="文件分层"><a href="#文件分层" class="headerlink" title="文件分层"></a>文件分层</h4><h4 id="引入轻量级golang类库"><a href="#引入轻量级golang类库" class="headerlink" title="引入轻量级golang类库"></a>引入轻量级golang类库</h4><h4 id="输入格式统一封装"><a href="#输入格式统一封装" class="headerlink" title="输入格式统一封装"></a>输入格式统一封装</h4><h4 id="定义中间件链路日志打印"><a href="#定义中间件链路日志打印" class="headerlink" title="定义中间件链路日志打印"></a>定义中间件链路日志打印</h4><h4 id="请求数据绑定结构体与校验"><a href="#请求数据绑定结构体与校验" class="headerlink" title="请求数据绑定结构体与校验"></a>请求数据绑定结构体与校验</h4><h3 id="实战开发用户管理系统"><a href="#实战开发用户管理系统" class="headerlink" title="实战开发用户管理系统"></a>实战开发用户管理系统</h3><h4 id="用户管理系统设计"><a href="#用户管理系统设计" class="headerlink" title="用户管理系统设计"></a>用户管理系统设计</h4><h5 id="功能原型及功能特点"><a href="#功能原型及功能特点" class="headerlink" title="功能原型及功能特点"></a>功能原型及功能特点</h5><h5 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h5><h5 id="后端准备"><a href="#后端准备" class="headerlink" title="后端准备"></a>后端准备</h5><h5 id="前端准备"><a href="#前端准备" class="headerlink" title="前端准备"></a>前端准备</h5><h4 id="实战开发"><a href="#实战开发" class="headerlink" title="实战开发"></a>实战开发</h4><h5 id="开发结构"><a href="#开发结构" class="headerlink" title="开发结构"></a>开发结构</h5><h5 id="整合前端调试"><a href="#整合前端调试" class="headerlink" title="整合前端调试"></a>整合前端调试</h5><h5 id="前后端部署与整合"><a href="#前后端部署与整合" class="headerlink" title="前后端部署与整合"></a>前后端部署与整合</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/10/Gin%E6%A1%86%E6%9E%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-装饰器使用问题与技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -634,181 +807,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-安装Python虚拟环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">安装Python虚拟环境</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="archive-article-date">
-  	<time datetime="2021-07-09T12:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.先检查pip是否是最新版本or升级</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --upgrade pip</span><br></pre></td></tr></table></figure>
-
-<p>2.安装virtualenv及扩展包</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenv <span class="comment">#安装虚拟环境</span></span><br><span class="line">sudo pip install virtualenvwrapper <span class="comment">#安装虚拟环境扩展包</span></span><br><span class="line">virtualenv --version  <span class="comment">#查看虚拟环境是否安装成功</span></span><br><span class="line"><span class="number">16.7</span><span class="number">.2</span>  <span class="comment">#显示已安装的版本号</span></span><br><span class="line"><span class="comment">#如果安装过可更新</span></span><br><span class="line">pip install --upgrade virtualenv  <span class="comment">#更新虚拟环境</span></span><br></pre></td></tr></table></figure>
-
-<p>3.创建存放Python虚拟环境的文件夹并进入该文件夹</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.virtualenvs  <span class="comment">#创建加密文件夹</span></span><br><span class="line">cd ~/.virtualenvs  <span class="comment">#进入文件夹</span></span><br></pre></td></tr></table></figure>
-
-<p>4.查看python3和virtualenvwrapper.sh的路径并保存下来</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">which python3</span><br><span class="line">which virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
-
-<p>5.编辑环境变量</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"></span><br><span class="line">export WORKON_HOME=<span class="string">&#x27;~/.virtualenvs&#x27;</span></span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=<span class="string">&#x27;Python3路径&#x27;</span></span><br><span class="line">source virtualenvwrapper.sh路径</span><br><span class="line"></span><br><span class="line"><span class="comment">#例如：</span></span><br><span class="line">export WORKON_HOME=<span class="string">&#x27;~/.virtualenvs&#x27;</span></span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=<span class="string">&#x27;/Library/Frameworks/Python.framework/Versions/3.7/bin/python3&#x27;</span></span><br><span class="line">source /Library/Frameworks/Python.framework/Versions/<span class="number">3.7</span>/<span class="built_in">bin</span>/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
-
-<p>6.更新环境变量</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-
-<p>7.进入存放虚拟环境的文件夹并创建虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#第一种方式</span><br><span class="line">cd ~/.virtualenvs</span><br><span class="line">mkvirtualenv -p python3 虚拟环境名字  #（名字为虚拟环境名称，自己随便取）</span><br><span class="line"></span><br><span class="line">#第二种方式</span><br><span class="line">python3 -m venv env_01  #在终端中切换到项目目录，使用Python3运行venv模块，创建一个名为env_01的虚拟环境</span><br><span class="line"></span><br><span class="line">#第三种方式</span><br><span class="line">mkdir env_02  #上面两种是创建环境这个只是目录</span><br></pre></td></tr></table></figure>
-
-<p>8.进入虚拟环境工作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">workon 虚拟环境名</span><br><span class="line">workon 空格 + 两个tab键 #暂时不知道差别在哪,在没创建虚拟环境时这个出现的是本机上所有的虚拟环境。</span><br><span class="line">workon  #这个显示的下级存在的虚拟环境</span><br></pre></td></tr></table></figure>
-
-<p>9.退出虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
-
-<p>10.删除虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmvirtualenv 虚拟环境名</span><br></pre></td></tr></table></figure>
-
-<p>11.虚拟环境下安装包的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 包名</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/09/%E5%AE%89%E8%A3%85Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux终端快捷命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/">Linux终端快捷命令</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2021-07-09T11:58:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>Tab</li>
-<li>Ctrl + C<br>在终端上中断命令或进程该。它将立刻终止运行的程序。</li>
-<li>Ctrl + Z<br>将正在运行的程序送到后台。通常，你可以在使用 &amp; 选项运行程序前之完成该操作， 但是如果你忘记使用选项运行程序，就使用这对组合键</li>
-<li>Ctrl + D<br>退出当前终端。如果你使用 SSH 连接，它将会关闭。如果你直接使用一个终端，该应用将会立刻关闭。</li>
-<li>Ctrl + L<br>清空终端屏幕，相当于 clear 命名。</li>
-</ol>
-<hr>
-<ol start="6">
-<li>Ctrl + A<br>移动光标到所在行首。</li>
-<li>Ctrl + E<br>移动光标到行尾。</li>
-<li>Ctrl + U<br>擦除当前光标位置到行首的全部内容。</li>
-<li>Ctrl + K<br>擦除当前光标位置到行尾的全部内容。</li>
-<li>Ctrl + W<br>擦除光标位置前的单词。</li>
-<li>Ctrl + Y<br>粘贴使用 Ctrl+W，Ctrl+U 和 Ctrl+K 快捷键擦除的文本。</li>
-<li>Ctrl + P<br>显示上一个命令。</li>
-<li>Ctrl + N<br>显示下一个命令。</li>
-<li>Ctrl + R<br>搜索历史命令。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/09/Linux%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
